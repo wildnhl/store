@@ -7,7 +7,7 @@ module.exports = {
   parserOptions: {
     sourceType: 'module',
     tsconfigRootDir: './',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    project: ['./tsconfig.json'],
     ecmaFeatures: {
       jsx: true
     },
@@ -19,7 +19,8 @@ module.exports = {
     'airbnb/hooks',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
+    'plugin:@next/next/recommended'
   ],
   overrides: [
     {
