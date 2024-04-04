@@ -1,2 +1,4 @@
+.eslintrc.js
+next-env.d.ts
 /node_modules
-vite.config.ts
+/public
