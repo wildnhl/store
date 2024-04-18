@@ -3,7 +3,13 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['standard', 'standard-with-typescript', 'plugin:react/recommended'],
+  extends: [
+    'standard',
+    'standard-with-typescript',
+    'plugin:react/recommended',
+    'next',
+    'plugin:@next/next/recommended'
+  ],
   overrides: [
     {
       env: {
@@ -26,6 +32,7 @@ module.exports = {
     '@typescript-eslint/semi': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     'space-before-function-paren': 0,
-    '@typescript-eslint/space-before-function-paren': 0
+    '@typescript-eslint/space-before-function-paren': 0,
+    '@typescript-eslint/member-delimiter-style': 0
   }
 };
