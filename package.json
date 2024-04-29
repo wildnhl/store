@@ -28,6 +28,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
+    "sass": "^1.75.0",
     "typescript": "^5.4.3"
   }
 }
