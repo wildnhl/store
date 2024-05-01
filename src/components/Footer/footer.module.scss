@@ -1,0 +1,15 @@
+.footerOuter {
+  margin-top: auto;
+}
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  padding: 35px 0;
+  border-top: 1px solid #e7e7e7;
+}
+
+.text {
+  font-family: var(--my-font-heliosRegular);
+  color: #a8a8a8;
+  line-height: 150%;
+}

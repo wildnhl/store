@@ -1,9 +1,9 @@
 import style from './header.module.scss';
-import Logo from '../../public/bookstore-logo.svg';
-import BasketIcon from '../../public/basket.svg';
-import FavoritesIcon from '../../public/favorites.svg';
-import UserIcon from '../../public/user-icon.svg';
-import SearchIcon from '../../public/search.svg';
+import Logo from 'root/public/bookstore-logo.svg';
+import BasketIcon from 'root/public/basket.svg';
+import FavoritesIcon from 'root/public/favorites.svg';
+import UserIcon from 'root/public/user-icon.svg';
+import SearchIcon from 'root/public/search.svg';
 export function Header() {
   return (
     <header className={style.headerInner}>
