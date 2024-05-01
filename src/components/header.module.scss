@@ -1,0 +1,50 @@
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.form {
+  position: relative;
+  flex-grow: 1;
+  max-width: 542px;
+}
+
+.searchInput {
+  width: 100%;
+  outline: none;
+  max-width: 542px;
+  font-family: var(--my-font-heliosRegular);
+  line-height: 200%;
+  font-size: 16px;
+  border: 1px solid #e7e7e7;
+  height: 56px;
+  padding-left: 20px;
+  padding-right: 38px;
+  &::placeholder {
+    color: #a8a8a8;
+    opacity: 1; /* Firefox */
+  }
+}
+
+.btnSubmit {
+  position: absolute;
+  border: none;
+  background: none;
+  padding: 0;
+  top: 0;
+  right: 18px;
+  bottom: 0;
+}
+
+.iconsGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconsGroupItem {
+  padding: 20px;
+}
