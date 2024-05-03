@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import { BookListItem } from '@/components/BookListItem/BookListItem';
 export default function Home() {
   return (
     <main>
-      <Link href="/posts">Posts</Link>
+      <BookListItem />
     </main>
   );
 }
