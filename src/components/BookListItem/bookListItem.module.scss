@@ -1,10 +1,20 @@
+.bookContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .imageBckg {
   background-color: #f4eefd;
 }
 
-.heading {
+.image {
+  margin: 0 auto;
+}
+
+.title {
   font-size: 24px;
   line-height: 133%;
+  margin-bottom: 8px;
   margin-top: 20px;
 }
 
@@ -13,6 +23,7 @@
   line-height: 150%;
   font-family: var(--my-font-heliosRegular);
   color: #a8a8a8;
+  margin-top: auto;
   margin-bottom: 40px;
 }
 

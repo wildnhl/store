@@ -1,8 +1,8 @@
-import { BookListItem } from '@/components/BookListItem/BookListItem';
+import { BookList } from '@/components/BooksList/BooksList';
 export default function Home() {
   return (
     <main>
-      <BookListItem />
+      <BookList />
     </main>
   );
 }
