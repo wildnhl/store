@@ -1,0 +1,32 @@
+.innerTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 128px;
+  & > div {
+    flex-grow: 1;
+  }
+}
+
+.imageBackground {
+  background-color: #fee9e2;
+  & img {
+    margin: 0 auto;
+  }
+}
+.price {
+  font-family: var(--my-font-bebas);
+  font-size: 40px;
+  line-height: 150%;
+  color: #313037;
+}
+.detailFlex {
+  display: flex;
+  font-family: var(--my-font-heliosRegular);
+  justify-content: space-between;
+  line-height: 200%;
+  color: #313037;
+}
+
+.nameDetail {
+  color: #a8a8a8;
+}
