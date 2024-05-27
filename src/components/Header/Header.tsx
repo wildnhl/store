@@ -1,4 +1,5 @@
 import style from './header.module.scss';
+import Link from 'next/link';
 import Logo from 'root/public/bookstore-logo.svg';
 import BasketIcon from 'root/public/basket.svg';
 import FavoritesIcon from 'root/public/favorites.svg';
@@ -7,7 +8,9 @@ import SearchIcon from 'root/public/search.svg';
 export function Header() {
   return (
     <header className={style.headerInner}>
-      <Logo />
+      <Link href={'/'}>
+        <Logo />
+      </Link>
       <form className={style.form}>
         <input
           className={style.searchInput}
