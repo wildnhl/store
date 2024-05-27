@@ -1,0 +1,21 @@
+.btn {
+  width: 100%;
+  border: none;
+  background-color: #313037;
+  color: #fff;
+  font-family: var(--my-font-bebas);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  padding: 18px 0 14px;
+  line-height: 100%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  outline: none;
+  &:hover {
+    background-color: #5b5a62;
+  }
+  &:disabled {
+    background-color: #a8a8a8;
+    cursor: default;
+  }
+}
