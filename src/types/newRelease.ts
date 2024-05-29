@@ -4,7 +4,7 @@ export interface INewReleasesType {
   books: IBookShort[];
 }
 
-interface IBookShort {
+export interface IBookShort {
   title: string;
   subtitle: string;
   isbn13: string;
