@@ -1,8 +1,10 @@
 import { BookList } from '@/components/BooksList/BooksList';
-export default function Home() {
+import { fetchNewReleases } from '@/services/new-releases';
+export default async function Home() {
+  const { books } = await fetchNewReleases();
   return (
     <main>
-      <BookList />
+      <BookList books={books} />
     </main>
   );
 }

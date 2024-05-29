@@ -1,9 +1,11 @@
 import { BookListItem } from '@/components/BookListItem/BookListItem';
-import { fetchNewReleases } from '@/services/new-releases';
+import { type IBookShort } from '@/types/newRelease';
 import style from './bookList.module.scss';
+interface IProps {
+  books: IBookShort[];
+}
 
-export async function BookList() {
-  const { books } = await fetchNewReleases();
+export async function BookList({ books }: IProps) {
   return (
     <section className={style.gridContainer}>
       {books.map(({ title, isbn13, price, image }) => {
