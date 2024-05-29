@@ -4,23 +4,15 @@ import Logo from 'root/public/bookstore-logo.svg';
 import BasketIcon from 'root/public/basket.svg';
 import FavoritesIcon from 'root/public/favorites.svg';
 import UserIcon from 'root/public/user-icon.svg';
-import SearchIcon from 'root/public/search.svg';
+
+import { Search } from '../Search/Search';
 export function Header() {
   return (
     <header className={style.headerInner}>
       <Link href={'/'}>
         <Logo />
       </Link>
-      <form className={style.form}>
-        <input
-          className={style.searchInput}
-          type="search"
-          placeholder="Search"
-        />
-        <button className={style.btnSubmit} type="submit" disabled>
-          <SearchIcon />
-        </button>
-      </form>
+      <Search formClass={style.form} />
       <div className={style.iconsGroup}>
         <div className={style.iconsGroupItem}>
           <FavoritesIcon />
