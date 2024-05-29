@@ -6,35 +6,41 @@ interface IProps {
   id: string;
 }
 export async function BookSingle({ id }: IProps) {
-  const { image, price, publisher, language, year, authors } =
+  const { image, price, publisher, language, authors, desc } =
     await fetchSingleBook(id);
   return (
-    <section className={style.innerTop}>
-      <div className={style.imageBackground}>
-        <Image
-          src={image}
-          width={300}
-          height={350}
-          alt="book-image"
-          priority={true}
-        />
-      </div>
-      <div>
-        <p className={style.price}>{price}</p>
-        <div className={style.detailFlex}>
-          <p className={style.nameDetail}>Autors</p>
-          <p>{authors}</p>
+    <>
+      <section className={style.innerTop}>
+        <div className={style.imageBackground}>
+          <Image
+            src={image}
+            width={300}
+            height={350}
+            alt="book-image"
+            priority={true}
+          />
         </div>
-        <div className={style.detailFlex}>
-          <p className={style.nameDetail}>Publisher</p>
-          <p>{publisher}</p>
+        <div>
+          <p className={style.price}>{price}</p>
+          <div className={style.detailFlex}>
+            <p className={style.nameDetail}>Autors</p>
+            <p>{authors}</p>
+          </div>
+          <div className={style.detailFlex}>
+            <p className={style.nameDetail}>Publisher</p>
+            <p>{publisher}</p>
+          </div>
+          <div className={style.detailFlex}>
+            <p className={style.nameDetail}>Language</p>
+            <p>{language}</p>
+          </div>
+          <DefaultButton text="Add to cart" />
         </div>
-        <div className={style.detailFlex}>
-          <p className={style.nameDetail}>Language</p>
-          <p>{language}</p>
-        </div>
-        <DefaultButton text="Add to cart" />
-      </div>
-    </section>
+      </section>
+      <section className={style.description}>
+        <h3 className={style.descriptionHead}>Description</h3>
+        <p className={style.descriptionText}>{desc}</p>
+      </section>
+    </>
   );
 }
