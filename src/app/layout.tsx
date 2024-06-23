@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <div id="container">
           <Header />
-          {children}
+          <main>{children}</main>
           <Footer />
         </div>
       </body>

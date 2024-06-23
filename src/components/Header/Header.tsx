@@ -4,7 +4,6 @@ import Logo from 'root/public/bookstore-logo.svg';
 import BasketIcon from 'root/public/basket.svg';
 import FavoritesIcon from 'root/public/favorites.svg';
 import UserIcon from 'root/public/user-icon.svg';
-
 import { Search } from '../Search/Search';
 export function Header() {
   return (
