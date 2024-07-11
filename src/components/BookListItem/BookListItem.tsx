@@ -10,23 +10,22 @@ interface IProps {
 }
 export function BookListItem({ title, price, image, id }: IProps) {
   return (
-    <Link
-      className={`${style.bookContainer} ${style.navLink} `}
-      href={`/book/${id}`}
-    >
-      <div className={style.imageBckg}>
-        <Image
-          className={style.image}
-          priority={true}
-          src={image}
-          width={226}
-          height={264}
-          alt="book"
-        />
-      </div>
-      <h3 className={style.title}>{title}</h3>
-      <p className={style.author}>by Lentin Joseph, Apress 2018</p>
-      <p className={style.price}>{price}</p>
-    </Link>
+    <li className={style.bookContainer}>
+      <Link className={style.navLink} href={`/book/${id}`}>
+        <div className={style.imageBckg}>
+          <Image
+            className={style.image}
+            priority={true}
+            src={image}
+            width={226}
+            height={264}
+            alt="book"
+          />
+        </div>
+        <h3 className={style.title}>{title}</h3>
+        <p className={style.author}>by Lentin Joseph, Apress 2018</p>
+        <p className={style.price}>{price}</p>
+      </Link>
+    </li>
   );
 }

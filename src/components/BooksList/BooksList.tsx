@@ -7,18 +7,23 @@ interface IProps {
 
 export async function BookList({ books }: IProps) {
   return (
-    <section className={style.gridContainer}>
-      {books.map(({ title, isbn13, price, image }) => {
-        return (
-          <BookListItem
-            key={isbn13}
-            title={title}
-            price={price}
-            image={image}
-            id={isbn13}
-          />
-        );
-      })}
-    </section>
+    <>
+      <section>
+        <ul className={style.gridContainer}>
+          {books.map(({ title, isbn13, price, image }) => {
+            return (
+              <BookListItem
+                key={isbn13}
+                title={title}
+                price={price}
+                image={image}
+                id={isbn13}
+              />
+            );
+          })}
+        </ul>
+        <div>GG</div>
+      </section>
+    </>
   );
 }
