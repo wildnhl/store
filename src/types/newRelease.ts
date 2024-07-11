@@ -1,4 +1,4 @@
-export interface INewReleasesType {
+export interface INewReleases {
   error: string;
   total: string;
   books: IBookShort[];
