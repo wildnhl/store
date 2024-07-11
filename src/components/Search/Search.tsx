@@ -15,9 +15,8 @@ export function Search({ formClass }: IProps) {
   }
   function handleSumbitSearchForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    router.push(`/search/${searchValue}`);
+    router.push(`/search/${searchValue}/1`);
   }
-
   useEffect(() => {
     if (params.searchValue !== undefined) {
       setSearchValue(params.searchValue as string);
