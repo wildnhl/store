@@ -18,6 +18,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.4",
     "@svgr/webpack": "^8.1.0",
+    "@types/connect": "^3.4.38",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -29,6 +30,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.34.1",
+    "mock-config-server": "^3.6.0",
     "sass": "^1.75.0",
     "typescript": "^5.4.3"
   }
