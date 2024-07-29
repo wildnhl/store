@@ -6,5 +6,8 @@ export default async function Page({
   params: { searchValue: string; pageNumber: string };
 }) {
   const { data } = await fetchSearch(params.searchValue, params.pageNumber);
-  return <BookList books={data.books} />;
+  console.log(params.pageNumber);
+  return (
+    <BookList books={data.books} totalBooks={data.total} page={data.page} />
+  );
 }
