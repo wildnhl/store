@@ -9,7 +9,7 @@ interface IProps {
 export function Search({ formClass }: IProps) {
   const [searchValue, setSearchValue] = useState('');
   const router = useRouter();
-  const params = useParams();
+  const params = useParams<{ searchValue: string; pageNumber: string }>();
   function handleChangeSearchInput(event: ChangeEvent<HTMLInputElement>) {
     setSearchValue(event.target.value);
   }
@@ -19,7 +19,7 @@ export function Search({ formClass }: IProps) {
   }
   useEffect(() => {
     if (params.searchValue !== undefined) {
-      setSearchValue(params.searchValue as string);
+      setSearchValue(params.searchValue);
     } else {
       setSearchValue('');
     }
