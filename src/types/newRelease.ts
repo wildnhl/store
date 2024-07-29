@@ -2,6 +2,7 @@ export interface INewReleases {
   error: string;
   total: string;
   books: IBookShort[];
+  page?: string;
 }
 
 export interface IBookShort {

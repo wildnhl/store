@@ -1,0 +1,38 @@
+.inner {
+  display: flex;
+  font-family: var(--my-font-heliosBold);
+  justify-content: space-between;
+}
+
+.schemeInner {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.pagItem {
+  color: #a8a8a8;
+}
+
+.link {
+  text-decoration: none;
+  &:hover {
+    color: #313037;
+  }
+}
+
+.activeLink {
+  color: #313037;
+}
+
+.navBtns {
+  color: #313037;
+  text-decoration: none;
+  &:hover {
+    color: #5b5a62;
+  }
+}
+.disableLink {
+  pointer-events: none;
+  color: #a8a8a8;
+}
