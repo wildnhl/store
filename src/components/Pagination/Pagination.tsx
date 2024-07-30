@@ -13,7 +13,9 @@ export function Pagination({ total, currentPage }: IPropsPagination) {
   const pathLastSlash = currentPath.lastIndexOf('/');
   const pathRequired = currentPath.slice(0, pathLastSlash);
   const activePage = +currentPath.slice(pathLastSlash + 1);
-  const pagesCount = Math.round(+total / 10);
+
+  let pagesCount = Math.round(+total / 10);
+  pagesCount = pagesCount > 100 ? 100 : pagesCount;
 
   const lastPage = activePage - 1;
   const nextPage = activePage + 1;

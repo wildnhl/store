@@ -1,11 +1,8 @@
 export function paginationScheme(pages: number, currentPage: number) {
-  const pagesCount = pages > 100 ? 100 : pages;
   const previousPage = currentPage - 1;
   const nextPage = currentPage + 1;
-  const scheme = [1, previousPage, currentPage, nextPage, pagesCount];
-  const filteredScheme = scheme.filter(
-    (item) => item > 0 && item <= pagesCount
-  );
+  const scheme = [1, previousPage, currentPage, nextPage, pages];
+  const filteredScheme = scheme.filter((item) => item > 0 && item <= pages);
   const set = new Set(filteredScheme);
   const result = Array.from(set);
 
