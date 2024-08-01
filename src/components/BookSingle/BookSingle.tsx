@@ -1,5 +1,6 @@
 import { fetchSingleBook } from '@/services/single-book';
-import { DefaultButton } from '../Buttons/DefaultButton/DefaultButton';
+// import { DefaultButton } from '../Buttons/DefaultButton/DefaultButton';
+import { AddToCartButton } from '../Buttons/AddToCartButton/AddToCartButton';
 import style from './bookSingle.module.scss';
 import Image from 'next/image';
 interface IProps {
@@ -34,7 +35,7 @@ export async function BookSingle({ id }: IProps) {
             <p className={style.nameDetail}>Language</p>
             <p>{language}</p>
           </div>
-          <DefaultButton text="Add to cart" />
+          <AddToCartButton text="Add to cart" id={id} />
         </div>
       </section>
       <section className={style.description}>
