@@ -17,7 +17,9 @@ export function Header() {
           <FavoritesIcon />
         </div>
         <div className={style.iconsGroupItem}>
-          <BasketIcon />
+          <Link href={'/cart'}>
+            <BasketIcon />
+          </Link>
         </div>
         <div className={style.iconsGroupItem}>
           <UserIcon />
