@@ -32,6 +32,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 0,
     'space-before-function-paren': 0,
     '@typescript-eslint/space-before-function-paren': 0,
-    '@typescript-eslint/member-delimiter-style': 0
+    '@typescript-eslint/member-delimiter-style': 0,
+    '@typescript-eslint/strict-boolean-expressions': 0,
+    '@typescript-eslint/no-unused-vars': 1
   }
 };
