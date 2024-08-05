@@ -1,13 +1,15 @@
 import style from './defaultButton.module.scss';
+import { type ReactNode } from 'react';
 
 interface IProps {
-  text: string;
-  clickFunc?: (event: any) => void;
+  children: ReactNode;
+  onClick?: () => void;
 }
-export function DefaultButton({ text, clickFunc }: IProps) {
+
+export function DefaultButton({ onClick, children }: IProps) {
   return (
-    <button className={style.btn} onClick={clickFunc}>
-      {text}
+    <button className={style.btn} onClick={onClick}>
+      {children}
     </button>
   );
 }
