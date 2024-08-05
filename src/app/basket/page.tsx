@@ -1,6 +1,11 @@
 'use client';
 import { BasketList } from '@/components/BasketList/BasketList';
-
+import { PageTitle } from '@/components/PageTitle/PageTitle';
 export default function Page() {
-  return <BasketList />;
+  return (
+    <>
+      <PageTitle>Your Cart</PageTitle>
+      <BasketList />
+    </>
+  );
 }

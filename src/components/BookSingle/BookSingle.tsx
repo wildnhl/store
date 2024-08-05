@@ -1,13 +1,14 @@
-import { fetchSingleBook } from '@/services/single-book';
 import { AddToBasketButton } from '../Buttons/AddToBasketButton/AddToBasketButton';
+import { type ISingleBook } from '@/types/singleBook';
 import style from './bookSingle.module.scss';
 import Image from 'next/image';
+
 interface IProps {
-  id: string;
+  book: ISingleBook;
 }
-export async function BookSingle({ id }: IProps) {
-  const { image, price, publisher, language, authors, desc } =
-    await fetchSingleBook(id);
+
+export async function BookSingle({ book }: IProps) {
+  const { image, price, publisher, language, authors, desc, isbn13: id } = book;
   return (
     <>
       <section className={style.innerTop}>
