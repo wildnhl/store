@@ -16,15 +16,14 @@ export function AddToBasketButton({ id }: IProps) {
     'cart',
     undefined
   );
+
   useEffect(() => {
-    const findItem = value?.find((el) => el.id === id);
-    setItem(findItem);
-    if (findItem) {
-      setLoad('Book was added');
-    } else {
-      setLoad('Add to basket');
+    if (value) {
+      const findItem = value.find((el) => el.id === id);
+      setItem(findItem);
+      findItem ? setLoad('Book was added') : setLoad('Add to basket');
     }
-  }, []);
+  }, [id, value]);
 
   function addBookToFavorite() {
     if (!value) {
