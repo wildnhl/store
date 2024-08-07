@@ -4,6 +4,7 @@ import { testReducer } from './reducers/test';
 export const makeStore = () => {
   return configureStore({
     reducer: {
+      test: testReducer
     }
   });
 };

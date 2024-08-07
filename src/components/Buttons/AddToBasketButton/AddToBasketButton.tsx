@@ -3,11 +3,17 @@
 import { DefaultButton } from '../DefaultButton/DefaultButton';
 import { useLocalStorage } from 'react-use';
 import { useEffect, useState } from 'react';
+import { useAppSelector, useAppDispatch } from '@/lib/hooks';
+import { setCountPlus } from '@/lib/reducers/test';
+
 interface IProps {
   id: string;
 }
 
 export function AddToBasketButton({ id }: IProps) {
+  const count = useAppSelector((state) => state.test.count);
+  const dispatch = useAppDispatch();
+  console.log(count);
   const [item, setItem] = useState<ILocalStorageValue>();
   const [load, setLoad] = useState<'load' | 'Book was added' | 'Add to basket'>(
     'load'
@@ -26,20 +32,17 @@ export function AddToBasketButton({ id }: IProps) {
   }, [id, value]);
 
   function addBookToFavorite() {
-    if (!value) {
-      setValue([{ id, amount: 1 }]);
-      setLoad('Book was added');
-    } else {
-      if (!item) {
-        value.push({ id, amount: 1 });
-        setValue(value);
-        setLoad('Book was added');
-      }
-    }
+    dispatch(setCountPlus());
+    // if (!value) {
+    //   setValue([{ id, amount: 1 }]);
+    //   setLoad('Book was added');
+    // } else {
+    //   if (!item) {
+    //     value.push({ id, amount: 1 });
+    //     setValue(value);
+    //     setLoad('Book was added');
+    //   }
+    // }
   }
-  return (
-    <DefaultButton onClick={item ? undefined : addBookToFavorite}>
-      {load}
-    </DefaultButton>
-  );
+  return <DefaultButton onClick={addBookToFavorite}>{load}</DefaultButton>;
 }
