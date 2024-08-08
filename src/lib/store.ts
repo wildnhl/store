@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { testReducer } from './reducers/test';
+import { basketReducer } from './reducers/basket-slice';
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      test: testReducer
+      basket: basketReducer
     }
   });
 };
