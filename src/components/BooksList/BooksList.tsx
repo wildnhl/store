@@ -9,7 +9,6 @@ interface IProps {
 }
 
 export async function BookList({ books, totalBooks, page }: IProps) {
-  // console.log('page', page);
   const paginationShow = page != null && (
     <Pagination total={totalBooks} currentPage={+page} />
   );
