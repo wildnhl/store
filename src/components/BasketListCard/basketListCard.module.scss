@@ -1,0 +1,47 @@
+.mainWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 130px;
+  align-items: center;
+  padding-bottom: 49px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.textAndImageWrapper {
+  display: flex;
+  gap: 32px;
+  flex-grow: 1;
+}
+
+.priceAndCloseWrapper {
+  max-width: 256px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.imageWrapper {
+  background-color: #d7e4fd;
+  flex-grow: 1;
+  max-width: 256px;
+  & img {
+    margin: 0 auto;
+  }
+}
+.title {
+  font-size: 24px;
+}
+
+.authors {
+  line-height: 150%;
+  color: #a8a8a8;
+  font-family: var(--my-font-heliosRegular);
+  margin: 8px 0 24px 0;
+}
+
+.price {
+  font-family: var(--my-font-bebas);
+  font-size: 40px;
+  line-height: 150%;
+}
