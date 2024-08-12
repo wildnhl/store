@@ -1,48 +1,42 @@
 'use client';
-
 import { DefaultButton } from '../DefaultButton/DefaultButton';
-import { useLocalStorage } from 'react-use';
-import { useEffect, useState } from 'react';
 import { useAppSelector, useAppDispatch } from '@/lib/hooks';
-import { setCountPlus } from '@/lib/reducers/test';
-
+import { addFavoriteBook } from '@/lib/reducers/basket-slice';
+import { useState, useEffect, useMemo } from 'react';
 interface IProps {
   id: string;
 }
 
 export function AddToBasketButton({ id }: IProps) {
-  const count = useAppSelector((state) => state.test.count);
+  const [isLoading, setIsLoading] = useState(true);
+  const basketData = useAppSelector((state) => state.basket.data);
   const dispatch = useAppDispatch();
-  console.log(count);
-  const [item, setItem] = useState<ILocalStorageValue>();
-  const [load, setLoad] = useState<'load' | 'Book was added' | 'Add to basket'>(
-    'load'
-  );
-  const [value, setValue] = useLocalStorage<ILocalStorageValue[]>(
-    'cart',
-    undefined
+  const findItemInBasket = useMemo(
+    () => basketData.find((el) => el.id === id),
+    [basketData, id]
   );
 
   useEffect(() => {
-    if (value) {
-      const findItem = value.find((el) => el.id === id);
-      setItem(findItem);
-      findItem ? setLoad('Book was added') : setLoad('Add to basket');
-    }
-  }, [id, value]);
+    setIsLoading(false);
+  }, [findItemInBasket]);
 
-  function addBookToFavorite() {
-    dispatch(setCountPlus());
-    // if (!value) {
-    //   setValue([{ id, amount: 1 }]);
-    //   setLoad('Book was added');
-    // } else {
-    //   if (!item) {
-    //     value.push({ id, amount: 1 });
-    //     setValue(value);
-    //     setLoad('Book was added');
-    //   }
-    // }
+  function onClick() {
+    if (!findItemInBasket) {
+      dispatch(addFavoriteBook(id)).catch(console.error);
+    }
   }
-  return <DefaultButton onClick={addBookToFavorite}>{load}</DefaultButton>;
+
+  if (isLoading) {
+    return (
+      <DefaultButton onClick={findItemInBasket ? undefined : onClick}>
+        Loading...
+      </DefaultButton>
+    );
+  } else {
+    return (
+      <DefaultButton onClick={findItemInBasket ? undefined : onClick}>
+        {findItemInBasket ? 'Book was added' : 'Add to basket'}
+      </DefaultButton>
+    );
+  }
 }
