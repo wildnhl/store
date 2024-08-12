@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Bebas_Neue, Inter } from 'next/font/google';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
+import { StoreProvider } from '@/app/StoreProvider';
 import '@/app/reset.scss';
 import { dinPro, heliosBold, heliosRegular } from './fonts';
 const inter = Inter({ subsets: ['latin'] });
@@ -27,7 +28,9 @@ export default function RootLayout({
       >
         <div id="container">
           <Header />
-          <main>{children}</main>
+          <StoreProvider>
+            <main>{children}</main>
+          </StoreProvider>
           <Footer />
         </div>
       </body>
