@@ -3,11 +3,11 @@ import { type ISingleBook } from '@/types/singleBook';
 import style from './bookSingle.module.scss';
 import Image from 'next/image';
 
-interface IProps {
+interface IBookSingleProps {
   book: ISingleBook;
 }
 
-export async function BookSingle({ book }: IProps) {
+export async function BookSingle({ book }: IBookSingleProps) {
   const { image, price, publisher, language, authors, desc, isbn13: id } = book;
   return (
     <>

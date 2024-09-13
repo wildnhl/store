@@ -1,14 +1,13 @@
-'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import style from './bookListItem.module.scss';
-interface IProps {
+interface IBookListItemProps {
   title: string;
   price: string;
   image: string;
   id: string;
 }
-export function BookListItem({ title, price, image, id }: IProps) {
+export function BookListItem({ title, price, image, id }: IBookListItemProps) {
   return (
     <li className={style.bookContainer}>
       <Link className={style.navLink} href={`/book/${id}`}>
